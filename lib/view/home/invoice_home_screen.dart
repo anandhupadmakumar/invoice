@@ -132,7 +132,13 @@ class InvoiceHomeScreen extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Remarks / Payment Instructions:'),
+                    SizedBox(
+                      width: 200.w,
+                      child: const Text(
+                        'Remarks / Payment Instructions:',
+                        style: TextStyle(overflow: TextOverflow.ellipsis),
+                      ),
+                    ),
                     const Spacer(),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -143,7 +149,7 @@ class InvoiceHomeScreen extends StatelessWidget {
                         const Text('DISCOUNT'),
                         height16,
                         SizedBox(
-                          width: 50.w, 
+                          width: 50.w,
                           child: const Text(
                             'SUBTOTAL LESS DISCOUNT',
                             style: TextStyle(overflow: TextOverflow.ellipsis),
