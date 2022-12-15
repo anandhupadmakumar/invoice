@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:invoice/core/constants/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'widgets/bill_and_ship_widget.dart';
 import 'widgets/invoice_table_widget.dart';
@@ -17,9 +16,10 @@ class InvoiceHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: appBarHeight,
-        title: const Text(
+        title: Text(
           'INVOICE',
-          style: TextStyle(color: Colors.grey),
+          style: TextStyle(
+              color: Colors.grey, fontSize: 20.sp, fontWeight: FontWeight.bold),
         ),
         actions: [
           CircleAvatar(
@@ -49,22 +49,23 @@ class InvoiceHomeScreen extends StatelessWidget {
                   height: 300.h,
                   width: 200.h,
                   child: Column(
-                    children: const [
+                    children: [
                       InvoiceTextField(
-                        hintText: '<Your Company Name>',
+                        hintText: '< ${AppLocalizations.of(context)!.company}>',
                       ),
                       InvoiceTextField(
-                        hintText: '<123 Street Address>',
+                        hintText: '<${AppLocalizations.of(context)!.street}>',
                       ),
                       InvoiceTextField(
-                        hintText: '<City,State,Zip/Post Code>',
+                        hintText: '<${AppLocalizations.of(context)!.postcode}>',
                       ),
                       InvoiceTextField(
-                        hintText: '<Phone Number>',
+                        hintText:
+                            '<${AppLocalizations.of(context)!.phonenumber}>',
                         inputType: TextInputType.phone,
                       ),
                       InvoiceTextField(
-                          hintText: '<Email Address>',
+                          hintText: '<${AppLocalizations.of(context)!.email}>',
                           inputType: TextInputType.emailAddress),
                     ],
                   ),
@@ -77,7 +78,7 @@ class InvoiceHomeScreen extends StatelessWidget {
                       TextField(
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
-                          hintText: 'DATE',
+                          hintText: AppLocalizations.of(context)!.date,
                           hintStyle: TextStyle(
                               color: Colors.blue[800],
                               fontWeight: FontWeight.bold),
@@ -87,13 +88,14 @@ class InvoiceHomeScreen extends StatelessWidget {
                       TextField(
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
-                          hintText: 'INVOICE NO.',
+                          hintText: AppLocalizations.of(context)!.invoiceno,
                           hintStyle: TextStyle(
                               color: Colors.blue[800],
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      const InvoiceTextField(hintText: 'Payment terms')
+                      InvoiceTextField(
+                          hintText: AppLocalizations.of(context)!.payment)
                     ],
                   ),
                 )
@@ -105,26 +107,26 @@ class InvoiceHomeScreen extends StatelessWidget {
                 BillAndShipWidget(
                   title: 'BILL TO',
                   textFieldWidgets: textfieldBillToColumnWidget([
-                    '<Contact Name',
-                    '<Client Company Name>',
-                    '<Address>',
-                    '<Phone>',
-                    '<Email>'
+                    '<${AppLocalizations.of(context)!.contactname}>',
+                    '<${AppLocalizations.of(context)!.client}>',
+                    '<${AppLocalizations.of(context)!.address}>',
+                    '<${AppLocalizations.of(context)!.phonenumber}>',
+                    '<${AppLocalizations.of(context)!.email}>'
                   ]),
                 ),
                 BillAndShipWidget(
                   title: 'SHIP TO',
                   textFieldWidgets: textfieldShipToColumnWidget([
-                    '<Name / Dept>',
-                    '<Client Company Name>',
-                    '<Address>',
-                    '<Phone>'
+                    '<${AppLocalizations.of(context)!.department}>',
+                    '<${AppLocalizations.of(context)!.client}>',
+                    '<${AppLocalizations.of(context)!.address}>',
+                    '<${AppLocalizations.of(context)!.phonenumber}>'
                   ]),
                 ),
               ],
             ),
             const TableWidget(),
-           height20,
+            height20,
             Column(
               children: [
                 Row(
@@ -137,9 +139,9 @@ class InvoiceHomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text('SUBTOTAL'),
-                       height17,
+                        height17,
                         const Text('DISCOUNT'),
-                       height16,
+                        height16,
                         SizedBox(
                           width: 50.w,
                           child: const Text(
@@ -147,17 +149,18 @@ class InvoiceHomeScreen extends StatelessWidget {
                             style: TextStyle(overflow: TextOverflow.ellipsis),
                           ),
                         ),
-                       height16,
+                        height16,
                         const Text('TAX RATE'),
-                       height18,
+                        height18,
                         const Text('TOTAL TAX'),
-                       height12,
+                        height12,
                         SizedBox(
-                            width: 50.w,
-                            child: const Text(
-                              'SHIPPING/HANDLING',
-                              style: TextStyle(overflow: TextOverflow.ellipsis),
-                            ),),
+                          width: 50.w,
+                          child: const Text(
+                            'SHIPPING/HANDLING',
+                            style: TextStyle(overflow: TextOverflow.ellipsis),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -165,15 +168,15 @@ class InvoiceHomeScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           const Text('0.00'),
-                         divThick2,
-                          const Text('0.00'),
-                        divThick2,
-                          const Text('0.00'),
-                         divThick2,
+                          divThick2,
                           const Text('0.00'),
                           divThick2,
                           const Text('0.00'),
-                         divThick2,
+                          divThick2,
+                          const Text('0.00'),
+                          divThick2,
+                          const Text('0.00'),
+                          divThick2,
                           const Text('0.00'),
                         ],
                       ),
@@ -181,9 +184,7 @@ class InvoiceHomeScreen extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  children: [
-                    divThick5
-                  ],
+                  children: [divThick5],
                 ),
               ],
             ),
@@ -205,7 +206,7 @@ class InvoiceHomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-           height20,
+            height20,
             redDivThick20,
           ],
         ),
@@ -213,8 +214,3 @@ class InvoiceHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

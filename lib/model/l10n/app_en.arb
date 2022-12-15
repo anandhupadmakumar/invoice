@@ -1,0 +1,59 @@
+{
+    "language":"English",
+    "@language":{
+        "description":"The current Language"
+    },
+    "company":"Your Company Name",
+    "@company":{
+        "description":"hint text company "
+    },
+    "street":"123 Street Address",
+    "@street":{
+        "description":"hint text street "
+    },
+    "postcode":"City,State,Zip/Post Code",
+    "@postcode":{
+        "description":"hint text postcode"
+    },
+     "phonenumber":"Phone Number",
+    "@phonenumber":{
+        "description":"hint text phonenumber"
+    },
+    "email":"Email Address",
+    "@email":{
+        "description":"hint text email"
+    },
+     "date":"Date",
+    "@date":{
+        "description":"hint text date"
+    },
+     "invoiceno":"INVOICE NO ",
+    "@invoiceno":{
+        "description":"hint text invoiceno"
+    },
+     "payment":"Payment Terms ",
+    "@payment":{
+        "description":"hint text payment"
+    },
+     "contactname":"Contact Name",
+    "@contactname":{
+        "description":"hint text contactname"
+    },
+     "client":"client Company Name",
+    "@client":{
+        "description":"hint text client"
+    },
+     "address":"Address",
+    "@address":{
+        "description":"hint text address"
+    },
+     "department":"Name/Department",
+    "@department":{
+        "description":"hint text department"
+    }
+    
+
+
+    
+
+}
