@@ -143,7 +143,7 @@ class InvoiceHomeScreen extends StatelessWidget {
                         const Text('DISCOUNT'),
                         height16,
                         SizedBox(
-                          width: 50.w,
+                          width: 50.w, 
                           child: const Text(
                             'SUBTOTAL LESS DISCOUNT',
                             style: TextStyle(overflow: TextOverflow.ellipsis),
